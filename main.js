@@ -1,3 +1,11 @@
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    if (typeof grecaptcha === 'undefined') {
+      alert('CAPTCHA couldn\'t load. Please disable AdBlocker or try another browser.');
+    }
+  }, 3000);
+});
+
 document.getElementById('form').addEventListener('submit', async(e) => {
 	e.preventDefault();
 	const fieldEmail = document.getElementById('email').value;

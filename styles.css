@@ -96,3 +96,7 @@ blockquote { margin:24px 0; padding-left:16px; line-height:24px; border-left:4px
 .l1 li { margin:16px 0; }
 .l2 li { margin:8px 0; }
 .l3 li { margin:8px 0; }
+
+
+.rc-anchor-light.rc-anchor-normal,
+.rc-anchor-light.rc-anchor-compact { border:none !important; }
