@@ -1,9 +1,10 @@
 window.addEventListener('load', () => {
-  setTimeout(() => {
+	alert('In order for CAPTCHA to work, please disable an ad blocker or try another browser without ad blockers.');
+  /*setTimeout(() => {
     if (typeof grecaptcha === 'undefined') {
       alert('CAPTCHA couldn\'t load. Please disable AdBlocker or try another browser.');
     }
-  }, 3000);
+  }, 3000);*/
 });
 
 document.getElementById('form').addEventListener('submit', async(e) => {

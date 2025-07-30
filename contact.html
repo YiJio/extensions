@@ -31,7 +31,7 @@
 						<input id="subject" name="subject" type="subject" placeholder="Subject" required />
 					</div>
 					<textarea id="message" name="message" placeholder="Message" required></textarea>
-					<div class="g-recaptcha" data-sitekey="6Lf_35MrAAAAAMiymD-gkshzw33mNyQ7j9mT446c"></div>
+					<div class="grecaptcha-container"></div>
 					<button>Send</button>
 				</form>
 				<div class="footnote">If you like my work, please consider supporting me by <a
@@ -47,6 +47,22 @@
 		</section>
 	</main>
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<script>
+		if(typeof grecaptcha === 'undefined') {
+			grecaptcha = {
+				ready: function(cb) {
+					const c = '___grecaptcha_cfg';
+					window[c] = window[c] || {};
+					(window[c]['fns'] = window[c]['fns'] || []).push(cb);
+				}
+			}
+		}
+		grecaptcha.ready(function() {
+			grecaptcha.render('grecaptcha-container', {
+				sitekey: '6Lf_35MrAAAAAMiymD-gkshzw33mNyQ7j9mT446c',
+			});
+		});
+	</script>
 	<script src="main.js"></script>
 </body>
 
