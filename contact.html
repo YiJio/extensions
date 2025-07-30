@@ -31,7 +31,7 @@
 						<input id="subject" name="subject" type="subject" placeholder="Subject" required />
 					</div>
 					<textarea id="message" name="message" placeholder="Message" required></textarea>
-					<div class="grecaptcha-container"></div>
+					<div id="grecaptcha" class="grecaptcha-container"></div>
 					<button>Send</button>
 				</form>
 				<div class="footnote">If you like my work, please consider supporting me by <a
@@ -58,7 +58,7 @@
 			}
 		}
 		grecaptcha.ready(function() {
-			grecaptcha.render('grecaptcha-container', {
+			grecaptcha.render('grecaptcha', {
 				sitekey: '6Lf_35MrAAAAAMiymD-gkshzw33mNyQ7j9mT446c',
 			});
 		});
