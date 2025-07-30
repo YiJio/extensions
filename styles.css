@@ -46,9 +46,9 @@ footer a:hover { border:none; }
 footer span { color:var(--text-tertiary); }
 
 form { position:relative; display:flex; flex-direction:column; align-items:flex-end; gap:16px; width:95%; margin:0 auto; }
-form div { display:flex; gap:16px; width:75%; }
+form > div { display:flex; gap:16px; width:75%; }
 form div input { flex:2; }
-input, select, textarea { padding:16px; height:52px; border-radius:8px; border:2px solid rgb(0 0 0 / 30%); outline:4px solid rgb(255 255 255 / 95%); background:rgb(255 255 255 / 95%); font-family:var(--font); font-size:14px; width:75%; transition:100ms; }
+input, select, textarea { padding:16px; height:48px; border-radius:8px; border:2px solid rgb(0 0 0 / 30%); outline:4px solid rgb(255 255 255 / 95%); background:rgb(255 255 255 / 95%); font-family:var(--font); font-size:14px; width:75%; transition:100ms; }
 input:focus, select:focus, textarea:focus { transition:100ms; border-color:rgb(0 0 0 / 50%); }
 select { padding:12px; flex:1; }
 textarea { min-height:200px; height:200px; max-height:320px; resize:vertical; }
@@ -98,5 +98,5 @@ blockquote { margin:24px 0; padding-left:16px; line-height:24px; border-left:4px
 .l3 li { margin:8px 0; }
 
 
-.rc-anchor-light.rc-anchor-normal,
-.rc-anchor-light.rc-anchor-compact { border:none !important; }
+.grecaptcha-container { justify-content:flex-end; }
+.grecaptcha-hint { margin-bottom:-8px; display:flex; flex-direction:column; gap:0; justify-content:flex-end; text-align:right; width:65%; font-size:8px; color:var(--text-tertiary); }
