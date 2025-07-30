@@ -13,20 +13,25 @@
 			<div class="content">
 				<h1 class="center">Contact</h1>
 				<p>If you have feedback or any suggestions, please fill out the form below.</p>
-				<form id="form" onsubmit="contact(event)">
+				<form id="form">
 					<img class="crisp" src="assets/contact.png" />
 					<input id="email" name="email" type="email" placeholder="Email" required />
 					<div>
 						<select id="category" name="category">
 							<option value="General">General</option>
-							<optgroup label="Extension-specific">
+							<optgroup label="Tool-specific">
+								<!--<option value="Luckoffee">Luckoffee</option>-->
 								<option value="Memokoi">Memokoi</option>
+								<!--<option value="Monjoy">Monjoy</option>-->
 								<option value="noto maki">noto maki</option>
+								<!--<option value="Time to Slip">Time to Slip</option>
+								<option value="YiGoLog">YiGoLog</option>-->
 							</optgroup>
 						</select>
 						<input id="subject" name="subject" type="subject" placeholder="Subject" required />
 					</div>
 					<textarea id="message" name="message" placeholder="Message" required></textarea>
+					<div class="g-recaptcha" data-sitekey="6Lf_35MrAAAAAMiymD-gkshzw33mNyQ7j9mT446c"></div>
 					<button>Send</button>
 				</form>
 				<div class="footnote">If you like my work, please consider supporting me by <a
@@ -41,6 +46,8 @@
 			</div>
 		</section>
 	</main>
+	<script async src="https://www.google.com/recaptcha/api.js" defer></script>
+	<script src="main.js"></script>
 </body>
 
 </html>
