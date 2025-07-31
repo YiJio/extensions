@@ -13,15 +13,15 @@ document.getElementById('form').addEventListener('submit', async(e) => {
 	const fieldCategory = document.getElementById('category').value;
 	const fieldSubject = document.getElementById('subject').value;
 	const fieldMessage = document.getElementById('message').value;
-	const captchaToken = grecaptcha.getResponse();
+	/*const captchaToken = grecaptcha.getResponse();
 	if(!captchaToken) {
 		alert('Please complete the CAPTCHA.');
 		return;
-	}
+	}*/
 	const res = await fetch('https://service.yijione.com/email/send', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json', 'X-Api-Key': 'SNm9B5SqF0RIFvnBdwedFGDzazUxQTqD' },
-		body: JSON.stringify({ source: 'GitHub', email: fieldEmail, category: fieldCategory, subject: fieldSubject, message: fieldMessage, captchaToken }),
+		body: JSON.stringify({ source: 'GitHub', email: fieldEmail, category: fieldCategory, subject: fieldSubject, message: fieldMessage, /*captchaToken*/ }),
 	});
 	const data = await res.json();
 	if(data.error) {
@@ -32,6 +32,6 @@ document.getElementById('form').addEventListener('submit', async(e) => {
 		fieldCategory.value = 'General';
 		fieldSubject.value = '';
 		fieldMessage.value = '';
-		grecaptcha.reset();
+		//grecaptcha.reset();
 	}
 });
