@@ -38,7 +38,7 @@ hr { margin:40px 0; border-top:1px solid var(--color-gray-1); height:1px; height
 
 
 main { flex:1; display:flex; align-items:center; justify-content:center; }
-section { max-width:800px; margin:0 auto; overflow:auto; display:flex; flex-direction:column; gap:16px; }
+section { max-width:800px; margin:0 auto; overflow:auto; display:flex; flex-direction:column; gap:16px; transition:all 0.3s ease; }
 footer { height:60px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; font-size:12px; font-family:var(--font-footer); }
 footer ul { color:var(--text-secondary); }
 footer a { color:var(--color-gray-2); }
@@ -59,8 +59,13 @@ blockquote { margin:24px 0; padding-left:16px; line-height:24px; border-left:4px
 .hover, .hover:hover { transition:all 0.3s ease; }
 .container { width:100%; height:100%; display:flex; flex-direction:column; }
 
-.flex { display:flex; gap:8px; list-style:none; }
+.flex { display:flex; gap:8px; list-style:none; flex-wrap:wrap; justify-content:center; }
+footer .flex { row-gap:0; padding:0 2rem; }
+
 .fjc { justify-content:center; }
+
+
+.links { display:flex; gap:8px; list-style:none; justify-content:center; }
 
 .link { display:flex; align-items:center; gap:4px; font-family:var(--font-footer); }
 .link a { position:relative; color:var(--color-gray-2); font-size:16px; }
@@ -100,3 +105,41 @@ blockquote { margin:24px 0; padding-left:16px; line-height:24px; border-left:4px
 
 .grecaptcha-container { justify-content:flex-end; }
 .grecaptcha-hint { margin-bottom:-8px; display:flex; flex-direction:column; gap:0; justify-content:flex-end; text-align:right; width:65%; font-size:8px; color:var(--text-tertiary); }
+
+
+
+/* ------------------------------------ */
+/*   SCREEN SIZES                       */
+/* ------------------------------------ */
+
+/* LARGE ------------------------------ */
+@media (max-width:1280px) {
+	.l-wrapper--webdev { width:64rem; }
+	#theme.l-wrapper.l-wrapper--webdev.l-wrapper--1 { padding-bottom:68px; }
+}
+
+/* LARGE ------------------------------ */
+@media (max-width:1024px) {
+	section { max-width:100%; width:100%; padding:0 2rem; }
+}
+
+/* TABLET ----------------------------- */
+@media (max-width:768px) {
+}
+
+/* LARGE SMARTPHONE ------------------- */
+@media (max-width:600px) {
+	h3 { font-size:20px; }
+	input, select, textarea, form > div, .grecaptcha-hint { width:100%; }
+	.crisp { display:none !important; }
+	.footnote { width:90%; font-size:12px; }
+}
+
+/* SMALL SMARTPHONE ------------------- */
+@media (max-width:480px) {
+	h1 { font-size:48px; }
+	h2 { font-size:40px; }
+	form > div { flex-direction:column; }
+	.links { flex-direction:column; align-items:center; gap:0px; }
+	.grecaptcha-hint { display:inline; }
+}

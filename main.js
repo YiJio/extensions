@@ -28,6 +28,10 @@ document.getElementById('form').addEventListener('submit', async(e) => {
 		alert('Failed: ' + data.error);
 	} else {
 		alert('Message sent!');
+		fieldEmail.value = '';
+		fieldCategory.value = 'General';
+		fieldSubject.value = '';
+		fieldMessage.value = '';
 		grecaptcha.reset();
 	}
 });

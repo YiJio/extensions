@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300..700&&display=swap');
+		* { padding:0; margin:0; outline:0; border:0; box-sizing:border-box; }
+		body { font-size:14px; font-family:'Overpass Mono', Arial, sans-serif; background-color:#f5f5f5; }
+		h3 { margin:0; font-size:18px; color:#333; }
+		p { margin:16px 0; }
+		blockquote { margin:24px 0; padding-left:16px; line-height:24px; border-left:4px solid #eee; border-radius:2px; font-style:italic; }
+		hr { width:100%; height:1px; background:#eee; }
+		.container { margin:20px auto; background-color:white; padding:20px; max-width:600px; }
+		.embed { padding:2px 16px; border:1px solid #f5f5f5; background:#f9f9f9; }
+		.embed p { margin:0; padding:8px 0; }
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h3>Contacted via ${source} from ${email}:</h3>
+		<p><b>Category:</b> ${category}</p>
+		<p><b>Subject:</b> ${subject}</p>		
+		<blockquote>${message}</blockquote>
+	</div>
+	<div class="container">
+		<h3>Thank you for contacting!</h3>
+		<p>I\'ll try to get back to you within 3 business days. Here is your inquiry transcript:</p>
+		<div class="embed">
+			<p><b>Category:</b> ${category}</p>
+			<hr/>
+			<p><b>Subject:</b> ${subject}</p>
+			<hr/>
+			<p>${message}</p>
+		</div>
+	</div>
+</body>
+</html>
