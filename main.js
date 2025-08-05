@@ -1,37 +1,39 @@
-/*window.addEventListener('load', () => {
-	alert('In order to send email successfully, the reCAPTCHA must work. However, for reCAPTCHA to work, please disable an ad blocker. If that still doesn\'t work, try another browser without any extensions installed.');
-  setTimeout(() => {
-    if (typeof grecaptcha === 'undefined') {
-      alert('CAPTCHA couldn\'t load. Please disable AdBlocker or try another browser.');
-    }
-  }, 3000);
-});*/
-
-document.getElementById('form').addEventListener('submit', async(e) => {
-	e.preventDefault();
-	const fieldEmail = document.getElementById('email').value;
-	const fieldCategory = document.getElementById('category').value;
-	const fieldSubject = document.getElementById('subject').value;
-	const fieldMessage = document.getElementById('message').value;
-	/*const captchaToken = grecaptcha.getResponse();
-	if(!captchaToken) {
-		alert('Please complete the CAPTCHA.');
-		return;
-	}*/
-	const res = await fetch('https://service.yijione.com/email/send', {
-		method: 'POST',
-		headers: { 'Content-Type': 'application/json', 'X-Api-Key': 'SNm9B5SqF0RIFvnBdwedFGDzazUxQTqD' },
-		body: JSON.stringify({ source: 'GitHub', email: fieldEmail, category: fieldCategory, subject: fieldSubject, message: fieldMessage, /*captchaToken*/ }),
+document.addEventListener('DOMContentLoaded', function() {
+	const filters = document.querySelectorAll('.badge');
+	const tools = document.querySelectorAll('.link');
+	let activeFilter = 'ext';
+	applyFilter(activeFilter);
+	// change filter based on badge selection
+	filters.forEach(button => {
+		button.addEventListener('click', () => {
+			filters.forEach(btn => btn.classList.replace('badge--on', 'badge--off'));
+			button.classList.replace('badge--off', 'badge--on');
+			activeFilter = button.id;
+			applyFilter(activeFilter);
+		});
 	});
-	const data = await res.json();
-	if(data.error) {
-		alert('Failed: ' + data.error);
-	} else {
-		alert('Message sent!');
-		fieldEmail.value = '';
-		fieldCategory.value = 'General';
-		fieldSubject.value = '';
-		fieldMessage.value = '';
-		//grecaptcha.reset();
+	// function to apply filter and render list
+	function applyFilter(tag) {
+		const visible = [];
+		tools.forEach(item => {
+			const bullet = item.querySelector('.bullet');
+			if(bullet) bullet.remove();
+			if(item.classList.contains(tag)) {
+				item.style.display = '';
+				visible.push(item);
+			} else {
+				item.style.display = 'none';
+			}
+		});
+		if(visible.length > 1) {
+			visible.forEach((item, index) => {
+				if(index < visible.length - 1) {
+					const bullet = document.createElement('span');
+					bullet.className = 'bullet';
+					bullet.innerHTML = '&bull;';
+					item.appendChild(bullet);
+				}
+			});
+		}
 	}
 });
