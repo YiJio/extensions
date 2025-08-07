@@ -35,11 +35,12 @@
 					<li>
 						<strong>Local Data</strong>
 						<ul class="l l2">
-							<li>A unique <code>userId</code> is generated and stored locally with <code>storage.sync</code> for the sole purpose of syncing your data with our remote database (Supabase).</li>
+							<li>A unique <code>userId</code> is generated and stored locally with <code>storage.sync</code> for the sole purpose of syncing your data with our remote database (Google Firestore).</li>
+							<li>You can also view your <code>userId</code> from within the extension. You can mention this <code>userId</code> if you choose to contact us regarding deletion of your data.</li>
 						</ul>
 					</li>
 					<li>
-						<strong>Synced Data (Supabase)</strong>
+						<strong>Synced Data (Google Firestore)</strong>
 						<ul class="l l2">
 							<li>User generated content constitues data that you input into the extension. This data is stored on our secure database using #2 to associate the data with your browser profile.</li>
 							<li>This may include:</li>
@@ -66,7 +67,7 @@
 				<h3>How We Share Information</h3>
 				<ul class="l l1">
 					<li>We do not sell, rent, or share your information; however,</li>
-					<li>The only third party we use is Supabase to store and sync your data securely. Supabase acts as a backend storage provider and does not access or process your data beyond basic hosting.</li>
+					<li>The only third party we use is Google Firestore to store and sync your data securely. Google Firestore acts as a backend storage provider and does not access or process your data beyond basic hosting.</li>
 				</ul>
 				<hr />
 				<h3>How Long We Keep Your Information</h3>
@@ -75,12 +76,9 @@
 					<li>Local storage: Your data remains stored in Chrome’s <code>storage.sync</code> and
 						<code>localStorage</code> until you uninstall the extension or manually clear the data.
 					</li>
-					<li>If your <code>storage.sync</code> data (<code>userId</code>) is deleted, your Supabase data tied to the
-						previous <code>userId</code> will be inactive. However, reopening the extension will generate another
-						<code>userId</code> if none exists.
-					</li>
+					<li>If your <code>storage.sync</code> data (<code>userId</code>) is deleted, your Google Firestore data tied to the previous <code>userId</code> will be inactive. However, reopening the extension will generate another <code>userId</code> if none exists.</li>
 				</ul>
-				<p>You can delete your data at any time by clearing your local storage or reaching out to us.</p>
+				<p>You can delete your data at any time by clearing your local storage or reaching out to us. Please mention your <code>userId</code> (displayed as ID at the top right of the extension) so we can better help you.</p>
 				<hr />
 				<h3>User Rights</h3>
 				<p>Depending on your location, you may have certain rights regarding your data.</p>
